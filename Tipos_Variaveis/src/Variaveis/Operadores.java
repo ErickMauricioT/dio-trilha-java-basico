@@ -34,11 +34,12 @@ public class Operadores {
 		b=6;
 		
 		// ==boolen ?se :senao
-		String resultado = a==b ?"verdadeira" : "falso";
-		
+		String resultado = a == b ?"verdadeira" : "falso";
+		int resultadoInt = a == b ? 1 : 0;
 	
 		
 		System.out.println(resultado);
+		System.out.println(resultadoInt);
 		
 		
 	}
