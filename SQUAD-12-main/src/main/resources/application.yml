@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: paporeto
+
+  jpa:
+    # Configurações do JPA
+    open-in-view: false  # Desabilita o OpenEntityManagerInView para evitar problemas de lazy-loading
+    show-sql: true       # Exibe SQL gerado pelo Hibernate para facilitar a depuração
+
+  hikari:
+    # Configurações do HikariCP
+    maximum-pool-size: 10  # Define o tamanho máximo do pool de conexões
+
+  flyway:
+    # Configurações do Flyway
+    locations: classpath:db/migration  # Define a localização dos scripts de migração
+    enabled: true                      # Habilita o Flyway para execução das migrações
+
+  thymeleaf:
+    # Configurações do Thymeleaf
+    prefix: classpath:/templates/     # Define o prefixo dos arquivos de template
+    enabled: false                     # Desabilita o Thymeleaf para servir páginas HTML
+    check-template-location: false  # Desativa a verificação da localização dos templates pelo Thymeleaf
+
+  springfox:
+    # Configurações do Swagger
+    documentation:
+      swagger-ui:
+        enabled: true  # Habilita o Swagger UI para documentar a API
+
+server:
+  port: 8080
+
+# Definição das variáveis de ambiente
+DATABASE_URL: jdbc:mysql://${MYSQL_HOST:localhost}:3306/paporeto?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
+DATABASE_USERNAME: root
+DATABASE_PASSWORD: 1234

@@ -1,0 +1,6 @@
+CREATE TABLE posts (
+    post_id BINARY(16) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
